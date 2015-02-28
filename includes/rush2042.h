@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:01:06 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 12:38:59 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ struct					s_xy
 
 t_xy					*create_map(void);
 t_xy					*new_xy(void);
+int						**init_map(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 10:12:43 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 12:05:00 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 int					main(void)
 {
+	t_xy			*max;
+
 	initscr();
-	create_map();
-	refresh();
-	getch();
+	while (42)
+	{
+		clear();
+		max = create_map();
+		refresh();
+		getch();
+		max = max;
+	}
 	endwin();
 	return (2042);
 }

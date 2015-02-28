@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 16:25:59 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:34:09 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ int						rand_a_else_b(int a, int b);
 int						key_hook(int button);
 void					create_case(int ***new);
 int						rush2042(int ***map);
+void					success(void);
+void					failure(void);
 
 #endif

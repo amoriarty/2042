@@ -6,11 +6,27 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 16:22:16 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 17:23:04 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
+
+/*
+static void			fuckmap(int ***map)
+{
+	int				x;
+	int				y;
+
+	x = -1;
+	while (++x < 4)
+	{
+		y = -1;
+		while (++y < 4)
+			(*map)[x][y] = 4;
+	}
+}
+*/
 
 int					main(void)
 {

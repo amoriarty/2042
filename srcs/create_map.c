@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:49:07 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 16:24:24 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 17:59:19 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_xy				*create_map(void)
 	t_xy			*max;
 
 	max = new_xy();
+	if ((max->x_max < 13) || (max->y_max < 33))
+		return (0);
 	while (x < max->x_max)
 	{
 		y = 0;

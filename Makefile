@@ -44,13 +44,13 @@ LIB= -L libft/ -lft
 
 #FRAMEWORK BLOC
 #Don't forget to add framework that you need !
-
+FRAMEWORK= -lncurses
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C libft/ re
 	@make -C libft/ clean
-	@$(GCC) $(SRC) $(INC) $(LIB) -o $(NAME)
+	@$(GCC) $(SRC) $(INC) $(LIB) $(FRAMEWORK) -o $(NAME)
 	@echo "$(NAME) has been created !"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c

@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 15:40:20 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:50:32 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ int					main(void)
 	int				**map;
 
 	initscr();
+	curs_set(FALSE);
 	map = init_map();
 	map = map;
 	while (42)
 	{
 		clear();
 		max = create_map();
+		read_map(map, max);
 		refresh();
 		key_hook(getch());
 		max = max;

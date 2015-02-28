@@ -6,7 +6,7 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/02/28 14:19:18 by chaueur          ###   ########.fr        #
+#    Updated: 2015/02/28 15:47:24 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,11 @@ NAME= 2042
 SRC_PATH= srcs/
 SRC_NAME= main.c\
 			create_map.c\
+			create_case.c\
 			init_map.c\
 			new_xy.c\
-			rand.c
+			rand.c \
+		  	key_hook.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

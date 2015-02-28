@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   create_case.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 15:40:20 by alegent          ###   ########.fr       */
+/*   Created: 2015/02/28 15:45:12 by alegent           #+#    #+#             */
+/*   Updated: 2015/02/28 15:47:00 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-int					main(void)
+void				create_case(int ***new)
 {
-	t_xy			*max;
-	int				**map;
+	int				sq;
+	int				i;
+	int				j;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		key_hook(getch());
-		max = max;
-	}
-	endwin();
-	return (2042);
+	sq = rand_a_b(0, 15);
+	i = sq / 4;
+	j = sq % 4;
+	if ((*new)[i][j] == 0)
+		(*new)[i][j] = rand_a_else_b(2, 4);
+	else
+		create_case(new);
 }

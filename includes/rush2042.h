@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 14:56:37 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 15:44:04 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # define TRUE 1
 # define FALSE 0
 # define ERROR -1
+# define EOL '\n'
+# define SUCCESS 1
+# define FAILURE 0
+# define UP_KEY 65
+# define DOWN_KEY 66
+# define LEFT_KEY 68
+# define RIGHT_KEY 67
+# define Q_KEY 113
+# define ESC_KEY 27
 
 typedef struct s_xy		t_xy;
 struct					s_xy
@@ -33,4 +42,7 @@ t_xy					*new_xy(void);
 int						**init_map(void);
 int						rand_a_b(int a, int b);
 int						rand_a_else_b(int a, int b);
+int						key_hook(int button);
+void					create_case(int ***new);
+
 #endif

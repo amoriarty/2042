@@ -6,7 +6,11 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2015/02/28 17:23:19 by alegent          ###   ########.fr        #
+=======
+#    Updated: 2015/02/28 17:33:37 by alegent          ###   ########.fr        #
+>>>>>>> master
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +31,14 @@ SRC_NAME= main.c \
 			new_xy.c \
 			rand.c \
 		  	key_hook.c \
+<<<<<<< HEAD
 			end_game.c \
 			rush2042.c \
 			down_deplacement.c
+=======
+		  	read_map.c \
+			rush2042.c
+>>>>>>> master
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

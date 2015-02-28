@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 17:24:36 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 18:20:56 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int			verif_map(int ***map)
 
 int					rush2042(int ***map)
 {
-//	int				tmp;
+	int				tmp;
 
 	if (verif_map(map) == FALSE)
 		failure();

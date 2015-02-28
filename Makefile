@@ -6,11 +6,7 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2015/02/28 17:23:19 by alegent          ###   ########.fr        #
-=======
-#    Updated: 2015/02/28 17:33:37 by alegent          ###   ########.fr        #
->>>>>>> master
+#    Updated: 2015/02/28 17:40:01 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,20 +21,16 @@ NAME= 2042
 # define all the .c file in the variable SRC NAME
 SRC_PATH= srcs/
 SRC_NAME= main.c \
-			create_map.c \
-			create_case.c \
-			init_map.c \
-			new_xy.c \
-			rand.c \
-		  	key_hook.c \
-<<<<<<< HEAD
-			end_game.c \
-			rush2042.c \
-			down_deplacement.c
-=======
-		  	read_map.c \
-			rush2042.c
->>>>>>> master
+		  create_map.c \
+		  create_case.c \
+		  init_map.c \
+		  new_xy.c \
+		  rand.c \
+		  key_hook.c \
+		  end_game.c \
+		  down_deplacement.c\
+		  read_map.c \
+		  rush2042.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

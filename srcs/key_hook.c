@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:26:24 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 15:29:03 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 18:00:31 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int				key_hook(int button)
 {
 	if (button == Q_KEY || button == ESC_KEY)
 		exit(EXIT_SUCCESS);
-	return (SUCCESS);
+	return (button);
 }

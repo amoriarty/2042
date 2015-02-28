@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rush2042.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 19:07:40 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 21:34:06 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-static int			verif_map(int ***map)
+static int			verif_map(int **map)
 {
 	int				x;
 	int				y;
@@ -23,23 +23,25 @@ static int			verif_map(int ***map)
 		y = -1;
 		while (++y < 4)
 		{
-			if ((*map)[x][y] == 0)
+			if (map[x][y] == 0)
 				return (TRUE);
 		}
 	}
 	return (FALSE);
 }
 
-int					rush2042(int ***map)
+int					rush2042(int **map)
 {
 	int				tmp;
 
 	if (verif_map(map) == FALSE)
 		failure();
-	create_case(map);
 	tmp = getch();
 	if (tmp == DOWN_KEY)
-		down_deplacement(map);
+	{
+		if (down_deplacement(map))
+			create_case(map);
+	}
 /*
 	else if (tmp == UP_KEY)
 		up_deplacement(map);

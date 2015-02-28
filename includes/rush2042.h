@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 17:50:11 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 21:33:28 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int						**init_map(void);
 int						rand_a_b(int a, int b);
 int						rand_a_else_b(int a, int b);
 int						key_hook(int button);
-void					create_case(int ***new);
+void					create_case(int **new);
 void					read_map(int **map, t_xy *max);
-int						rush2042(int ***map);
+int						rush2042(int **map);
 void					success(void);
 void					failure(void);
-void					down_deplacement(int ***map);
+int						down_deplacement(int **map);
 
 #endif

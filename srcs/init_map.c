@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 12:20:16 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 16:12:30 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 21:33:40 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ int					**init_map(void)
 	}
 	x = 0;
 	srand(time(NULL));
-	while (x < 2)
-	{
-		create_case(&new);
-		x++;
-	}
+	create_case(new);
+	create_case(new);
 	return (new);
 }

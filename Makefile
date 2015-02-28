@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/02/28 12:23:43 by alegent          ###   ########.fr        #
+#    Updated: 2015/02/28 15:30:30 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC_PATH= srcs/
 SRC_NAME= main.c \
 		  create_map.c \
 		  new_xy.c \
-		  init_map.c
+		  init_map.c \
+		  key_hook.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

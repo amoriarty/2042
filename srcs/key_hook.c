@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mouse_hook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 15:30:17 by alegent          ###   ########.fr       */
+/*   Created: 2015/02/28 14:26:24 by alegent           #+#    #+#             */
+/*   Updated: 2015/02/28 15:29:03 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-int					main(void)
+int				key_hook(int button)
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		key_hook(getch());
-		max = max;
-	}
-	endwin();
-	return (2042);
+	if (button == Q_KEY || button == ESC_KEY)
+		exit(EXIT_SUCCESS);
+	return (SUCCESS);
 }

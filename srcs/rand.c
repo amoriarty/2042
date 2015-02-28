@@ -6,10 +6,11 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 11:37:26 by chaueur           #+#    #+#             */
-/*   Updated: 2015/02/28 12:38:44 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 14:21:25 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "rush2042.h"
 int		rand_a_b(int a, int b)
 {
 	return (rand() %(b + 1 - a) + a);

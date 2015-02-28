@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
+#    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/02/28 12:23:43 by alegent          ###   ########.fr        #
+#    Updated: 2015/02/28 14:19:18 by chaueur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,11 @@ NAME= 2042
 #SRC BLOC
 # define all the .c file in the variable SRC NAME
 SRC_PATH= srcs/
-SRC_NAME= main.c \
-		  create_map.c \
-		  new_xy.c \
-		  init_map.c
+SRC_NAME= main.c\
+			create_map.c\
+			init_map.c\
+			new_xy.c\
+			rand.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

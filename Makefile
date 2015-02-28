@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/02/28 09:14:23 by alegent          ###   ########.fr        #
+#    Updated: 2015/02/28 10:12:51 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ NAME= 2042
 #SRC BLOC
 # define all the .c file in the variable SRC NAME
 SRC_PATH= srcs/
-SRC_NAME= main.c
+SRC_NAME= main.c \
+		  create_map.c \
+		  new_xy.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC
@@ -44,13 +46,13 @@ LIB= -L libft/ -lft
 
 #FRAMEWORK BLOC
 #Don't forget to add framework that you need !
-
+FRAMEWORK= -lncurses
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C libft/ re
 	@make -C libft/ clean
-	@$(GCC) $(SRC) $(INC) $(LIB) -o $(NAME)
+	@$(GCC) $(SRC) $(INC) $(LIB) $(FRAMEWORK) -o $(NAME)
 	@echo "$(NAME) has been created !"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c

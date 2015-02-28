@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_case.c                                      :+:      :+:    :+:   */
+/*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 15:45:12 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 16:27:46 by alegent          ###   ########.fr       */
+/*   Created: 2015/02/28 16:31:29 by alegent           #+#    #+#             */
+/*   Updated: 2015/02/28 16:33:46 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-void				create_case(int ***new)
+void				success(void)
 {
-	int				sq;
-	int				x;
-	int				y;
+	clear();
+	ft_putendl("You win !");
+	exit(EXIT_SUCCESS);
+}
 
-	sq = rand_a_b(0, 15);
-	x = sq / 4;
-	y = sq % 4;
-	if ((*new)[x][y] == 0)
-		(*new)[y][y] = rand_a_else_b(2, 4);
-	else
-		create_case(new);
+void				failure(void)
+{
+	clear();
+	ft_putendl("You lose !");
+	exit(EXIT_SUCCESS);
 }

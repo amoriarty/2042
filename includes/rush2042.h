@@ -6,7 +6,11 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2015/02/28 16:42:25 by chaueur          ###   ########.fr       */
+=======
+/*   Updated: 2015/02/28 16:25:59 by alegent          ###   ########.fr       */
+>>>>>>> de7644ae79925fd458c99703cb05a5da26b44c2b
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +48,10 @@ int						rand_a_b(int a, int b);
 int						rand_a_else_b(int a, int b);
 int						key_hook(int button);
 void					create_case(int ***new);
+<<<<<<< HEAD
 void					read_map(int **map, t_xy *max);
+=======
+int						rush2042(int ***map);
+>>>>>>> de7644ae79925fd458c99703cb05a5da26b44c2b
 
 #endif

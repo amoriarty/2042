@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:54:34 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 22:09:14 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 23:58:40 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static int			condition(int x, int y, int **map)
 		i++;
 		x--;
 	}
-	if (i)
+	//si on a de l'espace entre x et i
+	if (map[x][y] != 0 && i)
 	{
 		if (x + i + 1 <= 3 && map[x + i + 1][y] == map [x][y])
 			map[x + i + 1][y] += map[x][y];
@@ -37,27 +38,28 @@ static int			condition(int x, int y, int **map)
 		map[x - 1][y] = 0;
 		return (1);
 	}
-	
 	return (0);
 }
 
-int					down_deplacement(int **map)
+void				down_deplacement(int **map)
 {
 	int				x;
 	int				y;
 	int				output;
 
-	output = 0;
 	y = 0;
+	output = 0;
 	while (y < 4)
 	{
 		x = 3;
-		while (x > 0)
+		while (x >= 0)
 		{
-			output = condition(x, y, map);
+			if (condition(x, y, map))
+				output = 1;
 			x--;
 		}
 		y++;
 	}
-	return (output);
+	if (output)
+		create_case(map);
 }

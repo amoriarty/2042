@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 21:34:06 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 23:22:17 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ int					rush2042(int **map)
 		failure();
 	tmp = getch();
 	if (tmp == DOWN_KEY)
-	{
-		if (down_deplacement(map))
-			create_case(map);
-	}
+		down_deplacement(map);
 /*
 	else if (tmp == UP_KEY)
 		up_deplacement(map);

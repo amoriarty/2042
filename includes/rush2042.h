@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 21:33:28 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/02/28 23:01:52 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void					read_map(int **map, t_xy *max);
 int						rush2042(int **map);
 void					success(void);
 void					failure(void);
-int						down_deplacement(int **map);
+void					down_deplacement(int **map);
 
 #endif

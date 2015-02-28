@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/05 10:48:45 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/17 16:33:45 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include <stdlib.h>
+#include "libft.h"
 
-int					main(void)
+void		ft_memdel(void **ap)
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	if (ap != NULL)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		free(*ap);
+		*ap = NULL;
 	}
-	endwin();
-	return (2042);
 }

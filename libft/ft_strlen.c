@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 12:23:31 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:49:18 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+size_t		ft_strlen(const char *s)
 {
-	t_xy			*max;
-	int				**map;
+	size_t	i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
-	}
-	endwin();
-	return (2042);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

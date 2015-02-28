@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2015/01/14 14:20:46 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/14 14:27:37 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_xy			*max;
-	int				**map;
+	t_list			*new;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	if (lst && *f)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		new = (f)(lst);
+		if (new && lst->next)
+			new->next = ft_lstmap(lst->next, f);
+		return (new);
 	}
-	endwin();
-	return (2042);
+	return (NULL);
 }

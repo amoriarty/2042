@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/04 19:21:44 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/04 10:20:48 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		*ft_memchr(const void *s, int c, size_t n)
 {
-	t_xy			*max;
-	int				**map;
+	size_t		i;
+	void		*tmp;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	tmp = (unsigned char *)s;
+	while (i < n)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		if (*(unsigned char *)tmp == (unsigned char)c)
+			return ((void *)tmp);
+		i++;
+		tmp++;
 	}
-	endwin();
-	return (2042);
+	return (NULL);
 }

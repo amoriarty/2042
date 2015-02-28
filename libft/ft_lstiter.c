@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2015/01/14 14:16:36 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/14 14:28:31 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	if (lst && f)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		ft_lstiter(lst->next, f);
+		(*f)(lst);
 	}
-	endwin();
-	return (2042);
 }

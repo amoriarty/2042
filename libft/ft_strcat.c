@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 16:35:24 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/03 16:51:00 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+char		*ft_strcat(char *s1, const char *s2)
 {
-	t_xy			*max;
-	int				**map;
+	int		i;
+	int		x;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	x = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[x] != '\0')
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		s1[i] = s2[x];
+		i++;
+		x++;
 	}
-	endwin();
-	return (2042);
+	s1[i] = '\0';
+	return (s1);
 }

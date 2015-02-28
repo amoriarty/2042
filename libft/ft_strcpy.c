@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 15:46:06 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:48:31 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+char		*ft_strcpy(char *dst, const char *src)
 {
-	t_xy			*max;
-	int				**map;
+	int		i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	if (sizeof(dst) >= sizeof(src))
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		while (src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+		return (dst);
 	}
-	endwin();
-	return (2042);
+	return (NULL);
 }

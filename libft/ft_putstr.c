@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 12:48:28 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/04 16:06:07 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		ft_putstr(char const *s)
 {
-	t_xy			*max;
-	int				**map;
+	int		i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		ft_putchar(s[i]);
+		i++;
 	}
-	endwin();
-	return (2042);
 }

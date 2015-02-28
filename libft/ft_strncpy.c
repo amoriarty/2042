@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 16:19:26 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 17:24:58 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+char		*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	t_xy			*max;
-	int				**map;
+	unsigned int		i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	while (src[i] != '\0' && i < n && src && dst)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		dst[i] = src[i];
+		i++;
 	}
-	endwin();
-	return (2042);
+	while (i < n && src && dst)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

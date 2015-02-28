@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putcolor.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/30 12:31:24 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/30 12:33:08 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void				ft_putcolor(char *str, char *color)
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
-	}
-	endwin();
-	return (2042);
+	ft_putstr(color);
+	ft_putstr(str);
+	ft_putstr(CANCEL);
 }

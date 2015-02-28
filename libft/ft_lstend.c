@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstend.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/26 14:54:43 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/26 14:59:43 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void				ft_lstend(t_list **alst, t_list *new)
 {
-	t_xy			*max;
-	int				**map;
+	t_list		*tmp;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
-	}
-	endwin();
-	return (2042);
+	tmp = *alst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }

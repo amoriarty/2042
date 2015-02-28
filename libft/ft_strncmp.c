@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 18:12:20 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:49:35 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+int			ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_xy			*max;
-	int				**map;
+	unsigned int		i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	endwin();
-	return (2042);
+	return (0);
 }

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/04 13:00:40 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:45:24 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+char		*ft_strchr(const char *s, int c)
 {
-	t_xy			*max;
-	int				**map;
+	char	*tmp;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	tmp = (char *)s;
+	while (*tmp)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		if (*tmp == c)
+			return (tmp);
+		tmp++;
 	}
-	endwin();
-	return (2042);
+	if (*tmp == c)
+		return (tmp);
+	return (NULL);
 }

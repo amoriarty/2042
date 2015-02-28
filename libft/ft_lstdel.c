@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/26 12:57:28 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:46:02 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_xy			*max;
-	int				**map;
+	t_list		*list;
+	t_list		*tmp;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	list = (*alst);
+	while (list)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		tmp = list->next;
+		(*del)(list->content, list->content_size);
+		free(list);
+		list = tmp;
 	}
-	endwin();
-	return (2042);
+	(*alst) = NULL;
 }

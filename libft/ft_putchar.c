@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/03 12:41:45 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:47:09 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		ft_putchar(char c)
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
-	}
-	endwin();
-	return (2042);
+	write(1, &c, 1);
 }

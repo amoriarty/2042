@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/25 19:56:11 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:46:18 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+t_list			*ft_lstnew(void *content, size_t content_size)
 {
-	t_xy			*max;
-	int				**map;
+	t_list		*new;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	if ((new = (t_list *)malloc(sizeof(t_list))) == NULL)
+		return (NULL);
+	if (content == NULL)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		new->content = NULL;
+		new->content_size = 0;
 	}
-	endwin();
-	return (2042);
+	else
+	{
+		new->content = content;
+		new->content_size = content_size;
+	}
+	new->next = NULL;
+	return (new);
 }

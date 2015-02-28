@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/04 16:46:40 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/05 11:52:36 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		ft_putnbr_fd(int n, int fd)
 {
-	t_xy			*max;
-	int				**map;
-
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
-	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
-	}
-	endwin();
-	return (2042);
+	ft_putstr_fd(ft_itoa(n), fd);
 }

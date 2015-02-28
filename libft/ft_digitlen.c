@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_digitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/16 09:25:41 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/30 11:14:16 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+size_t					ft_digitlen(int n)
 {
-	t_xy			*max;
-	int				**map;
+	size_t				res;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	res = 0;
+	if (n > 9)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		res++;
+		return (res + ft_digitlen(n / 10));
 	}
-	endwin();
-	return (2042);
+	res++;
+	return (res);
 }

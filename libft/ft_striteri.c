@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/05 15:03:34 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:48:54 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	t_xy			*max;
-	int				**map;
+	unsigned int	i;
+	unsigned int	len;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	if (s != NULL && f != NULL)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		i = 0;
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			(*f)(i, s);
+			s++;
+			i++;
+		}
 	}
-	endwin();
-	return (2042);
 }

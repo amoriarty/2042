@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 12:53:02 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/04 18:23:17 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/03 15:45:46 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush2042.h"
+#include "libft.h"
 
-int					main(void)
+void		ft_bzero(void *s, size_t n)
 {
-	t_xy			*max;
-	int				**map;
+	size_t		i;
 
-	initscr();
-	map = init_map();
-	map = map;
-	while (42)
+	i = 0;
+	while (i < n)
 	{
-		clear();
-		max = create_map();
-		refresh();
-		getch();
-		max = max;
+		*(char *)s = 0;
+		s++;
+		i++;
 	}
-	endwin();
-	return (2042);
 }

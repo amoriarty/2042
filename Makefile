@@ -6,7 +6,7 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/02/28 16:41:47 by chaueur          ###   ########.fr        #
+#    Updated: 2015/02/28 17:33:37 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC_NAME= main.c\
 			new_xy.c\
 			rand.c \
 		  	key_hook.c \
-		  	read_map.c
+		  	read_map.c \
+			rush2042.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 #OBJ BLOC

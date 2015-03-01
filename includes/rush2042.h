@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 13:43:26 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 16:37:44 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void					up_move(int **map);
 void					left_move(int **map);
 void					right_move(int **map);
 void					create_menu(t_env *env);
+int						winner(int **map);
 
 #endif

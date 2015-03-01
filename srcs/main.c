@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 13:04:07 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 16:37:32 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static void				success(void)
 {
-	ft_putendl("You win !");
+	clear();
+	endwin();
+	ft_putendl("YOU WIN !!!");
+	exit(EXIT_SUCCESS);
 }
 
 static void				failure(int **map)
@@ -22,7 +25,7 @@ static void				failure(int **map)
 	int					i;
 
 	i = 0;
-	clear();
+	endwin();
 	ft_putendl("You lose !");
 	while (i < 4)
 	{
@@ -63,6 +66,8 @@ static void				facto(int **map, t_xy *coord)
 	rush2042(map);
 	if (verif_map(map) == FALSE)
 		failure(map);
+	if (winner(map) == TRUE)
+		success();
 	refresh();
 }
 

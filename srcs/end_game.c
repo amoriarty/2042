@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:31:29 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 03:13:32 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:27:49 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ void				check_win_value(int value)
 
 void				error(char *s, char *s2)
 {
-		clear();
-		endwin();
-		ft_puterror(s, s2);
+	clear();
+	endwin();
+	ft_puterror(s, s2);
 }
+
 void				success(void)
 {
 	clear();

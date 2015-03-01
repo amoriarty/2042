@@ -6,7 +6,7 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/03/01 00:39:22 by chaueur          ###   ########.fr        #
+#    Updated: 2015/03/01 03:38:13 by chaueur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 # specify project
 
 #Define name of program here
-NAME= 2042
+NAME= game_2048
 
 #SRC BLOC
 # define all the .c file in the variable SRC NAME
@@ -28,10 +28,10 @@ SRC_NAME= main.c \
 		  rand.c \
 		  key_hook.c \
 		  end_game.c \
-		  down_deplacement.c \
-		  up_deplacement.c \
-		  left_deplacement.c \
-		  right_deplacement.c \
+		  down_move.c \
+		  up_move.c \
+		  left_move.c \
+		  right_move.c \
 		  read_map.c \
 		  rush2042.c
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))

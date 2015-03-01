@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 03:10:51 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:43:01 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int					verif_map(int **map)
 			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
 				return (TRUE);
 			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
-			  	return (TRUE);
+				return (TRUE);
 			else if (map[x][y] == 0)
 				return (TRUE);
 		}
@@ -40,16 +40,14 @@ int					rush2042(int **map)
 	int				tmp;
 
 	tmp = getch();
-	/*if (verif_map(map) == FALSE)
-		failure();*/
 	if (tmp == DOWN_KEY)
-		down_deplacement(map);
+		down_move(map);
 	else if (tmp == UP_KEY)
-		up_deplacement(map);
+		up_move(map);
 	else if (tmp == LEFT_KEY)
-		left_deplacement(map);
+		left_move(map);
 	else if (tmp == RIGHT_KEY)
-		right_deplacement(map);
+		right_move(map);
 	else
 		return (ERROR);
 	return (SUCCESS);

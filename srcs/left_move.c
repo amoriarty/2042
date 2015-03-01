@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   left_deplacement.c                                 :+:      :+:    :+:   */
+/*   left_move.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/01 00:23:44 by chaueur           #+#    #+#             */
-/*   Updated: 2015/03/01 02:02:43 by chaueur          ###   ########.fr       */
+/*   Created: 2015/03/01 03:31:19 by chaueur           #+#    #+#             */
+/*   Updated: 2015/03/01 03:40:43 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ static int			condition(int x, int y, int **map)
 		i++;
 		y++;
 	}
-	//si on a de l'espace entre x et i
 	if (map[x][y] != 0 && i)
 	{
-		if (y - i - 1 >= 0 && map[x][y - i - 1] == map [x][y])
+		if (y - i - 1 >= 0 && map[x][y - i - 1] == map[x][y])
 			map[x][y - i - 1] += map[x][y];
 		else
 			map[x][y - i] = map[x][y];
@@ -41,7 +40,7 @@ static int			condition(int x, int y, int **map)
 	return (FALSE);
 }
 
-void				left_deplacement(int **map)
+void				left_move(int **map)
 {
 	int				x;
 	int				y;

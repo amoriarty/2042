@@ -6,7 +6,7 @@
 #    By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/13 12:17:39 by alegent           #+#    #+#              #
-#    Updated: 2015/03/01 04:18:00 by chaueur          ###   ########.fr        #
+#    Updated: 2015/03/01 09:12:02 by chaueur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NAME= game_2048
 SRC_PATH= srcs/
 SRC_NAME= main.c \
 		  create_map.c \
+		  create_menu.c \
 		  create_case.c \
 		  init_map.c \
 		  new_xy.c \
@@ -58,7 +59,7 @@ LIB= -L libft/ -lft
 
 #FRAMEWORK BLOC
 #Don't forget to add framework that you need !
-FRAMEWORK= -lncurses
+FRAMEWORK= -lmenu -lncurses
 all: $(NAME)
 
 $(NAME): $(OBJ)

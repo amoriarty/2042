@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush2042.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 19:07:40 by alegent          ###   ########.fr       */
+/*   Updated: 2015/02/28 19:30:03 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ int					rush2042(int ***map)
 
 	if (verif_map(map) == FALSE)
 		failure();
-	create_case(map);
 	tmp = getch();
 	if (tmp == DOWN_KEY)
+	{
 		down_deplacement(map);
+		create_case(map);
+	}
+	
 /*
 	else if (tmp == UP_KEY)
 		up_deplacement(map);

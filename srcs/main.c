@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 17:24:14 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 18:27:17 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ static int				verif_map(int **map)
 		y = -1;
 		while (++y < 4)
 		{
-			if (check_win_value(map[x][y]))
-				success();
 			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
 				return (TRUE);
 			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
@@ -62,14 +60,20 @@ static int				verif_map(int **map)
 	return (FALSE);
 }
 
-static void				facto(int **map, t_xy *coord)
+static void				facto(int **map, t_xy *coord, int *win)
 {
 	read_map(map, coord);
 	rush2042(map);
 	if (verif_map(map) == FALSE)
 		failure(map);
-	if (winner(map) == TRUE)
-		success();
+	if (*win == 0)
+	{
+		if (winner(map) == TRUE)
+		{
+			(*win)++;
+			success();
+		}
+	}
 	refresh();
 }
 
@@ -78,18 +82,21 @@ int						main(void)
 	t_xy				*coord;
 	t_env				env;
 	int					**map;
+	int					win;
 
+	check_win_value();
+	win = 0;
+	win = win;
 	initscr();
 	env.grid_size = 4;
-	create_menu(&env);
-	check_win_value(0);
+	create_menu();
 	curs_set(FALSE);
 	map = init_map();
 	while (42)
 	{
 		clear();
 		if ((coord = create_map(&env)))
-			facto(map, coord);
+			facto(map, coord, &win);
 		else
 		{
 			error("2042", "Window size too small");

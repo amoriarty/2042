@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 17:20:02 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 18:29:53 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void					create_case(int **new);
 void					read_map(int **map, t_xy *max);
 int						rush2042(int **map);
 void					error(char *s, char *s2);
-int						check_win_value(int value);
+int						check_win_value(void);
 void					down_move(int **map);
 void					up_move(int **map);
 void					left_move(int **map);
 void					right_move(int **map);
-void					create_menu(t_env *env);
+void					create_menu(void);
 int						winner(int **map);
 
 #endif

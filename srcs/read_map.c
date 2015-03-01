@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:20:05 by chaueur           #+#    #+#             */
-/*   Updated: 2015/03/01 03:44:02 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 10:43:30 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@ static void			print_case(int **map, t_xy *coord, int x, int y)
 	h = coord->height;
 	num_x = x * w + ((w + ft_digitlen(map[x][y])) / 2);
 	num_y = y * h + (h / 2);
+	start_color();
+	init_pair(1, COLOR_GREEN, COLOR_BLACK);
+	attron(COLOR_PAIR(1));
 	mvprintw(num_x, num_y, ft_itoa(map[x][y]));
+	attroff(COLOR_PAIR(1));
+	refresh();
+	
 }
 
 void				read_map(int **map, t_xy *coord)

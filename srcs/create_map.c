@@ -6,20 +6,20 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:49:07 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 03:36:33 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 11:14:47 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-t_xy				*create_map(void)
+t_xy				*create_map(t_env *env)
 {
 	int				x;
 	int				y;
 	t_xy			*coord;
 
-	coord = new_xy();
-	if ((coord->x_max < 10) || (coord->y_max < 10))
+	coord = new_xy(env);
+	if ((coord->x_max < 20) || (coord->y_max < 10))
 		return (0);
 	while (x < coord->x_max)
 	{

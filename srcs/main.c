@@ -6,15 +6,15 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 04:39:18 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 10:36:15 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-static void				success(int **map)
+static void				success(void)
 {
-	ft_putendl("You win !")
+	ft_putendl("You win !");
 }
 
 static void				failure(int **map)
@@ -45,7 +45,7 @@ static int				verif_map(int **map)
 		while (++y < 4)
 		{
 			if (check_win_value(map[x][y]))
-				success(map);
+				success();
 			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
 				return (TRUE);
 			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
@@ -57,19 +57,22 @@ static int				verif_map(int **map)
 	return (FALSE);
 }
 
-int					main(void)
+int						main(void)
 {
-	t_xy			*coord;
-	int				**map;
+	t_xy				*coord;
+	t_env				env;
+	int					**map;
 
-	check_win_value(0);
 	initscr();
+	env.grid_size = 4;
+	create_menu(&env);
+	check_win_value(0);
 	curs_set(FALSE);
 	map = init_map();
 	while (42)
 	{
 		clear();
-		if ((coord = create_map()))
+		if ((coord = create_map(&env)))
 		{
 			read_map(map, coord);
 			rush2042(map);

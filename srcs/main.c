@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 11:37:46 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:04:07 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,15 @@ static int				verif_map(int **map)
 	return (FALSE);
 }
 
+static void				facto(int **map, t_xy *coord)
+{
+	read_map(map, coord);
+	rush2042(map);
+	if (verif_map(map) == FALSE)
+		failure(map);
+	refresh();
+}
+
 int						main(void)
 {
 	t_xy				*coord;
@@ -73,13 +82,7 @@ int						main(void)
 	{
 		clear();
 		if ((coord = create_map(&env)))
-		{
-			read_map(map, coord);
-			rush2042(map);
-			if (verif_map(map) == FALSE)
-				failure(map);
-			refresh();
-		}
+			facto(map, coord);
 		else
 		{
 			error("2042", "Window size too small");

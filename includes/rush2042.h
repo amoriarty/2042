@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 10:36:56 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:35:13 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define RUSH2042_H
 # include "libft.h"
 # include <ncurses.h>
-# include <curses.h>
-# include <menu.h>
 # include <time.h>
 # define TRUE 1
 # define FALSE 0
@@ -38,23 +36,17 @@ struct					s_xy
 	int					x_max;
 	int					y_max;
 };
-enum e_const
+enum	e_const
 {
 	WIN_VALUE = 2048
 };
-typedef struct s_env	t_env;
-struct					s_env
-{
-	int					grid_size;
-};
 
-t_xy					*create_map(t_env *env);
-t_xy					*new_xy(t_env *env);
+t_xy					*create_map(void);
+t_xy					*new_xy(void);
 int						**init_map(void);
 int						rand_a_b(int a, int b);
 int						key_hook(int button);
 void					create_case(int **new);
-void 					create_menu(t_env *env);
 void					read_map(int **map, t_xy *max);
 int						rush2042(int **map);
 void					error(char *s, char *s2);

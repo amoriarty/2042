@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:20:05 by chaueur           #+#    #+#             */
-/*   Updated: 2015/03/01 10:43:30 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:25:38 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static void			print_case(int **map, t_xy *coord, int x, int y)
 	mvprintw(num_x, num_y, ft_itoa(map[x][y]));
 	attroff(COLOR_PAIR(1));
 	refresh();
-	
 }
 
 void				read_map(int **map, t_xy *coord)

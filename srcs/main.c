@@ -6,15 +6,15 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 04:39:18 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 11:27:54 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-static void				success(int **map)
+static void				success(void)
 {
-	ft_putendl("You win !")
+	ft_putendl("You win !");
 }
 
 static void				failure(int **map)
@@ -24,7 +24,7 @@ static void				failure(int **map)
 	i = 0;
 	clear();
 	ft_putendl("You lose !");
-	while (i < 4);
+	while (i < 4)
 	{
 		free(map[i]);
 		i++;
@@ -45,7 +45,7 @@ static int				verif_map(int **map)
 		while (++y < 4)
 		{
 			if (check_win_value(map[x][y]))
-				success(map);
+				success();
 			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
 				return (TRUE);
 			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
@@ -57,7 +57,7 @@ static int				verif_map(int **map)
 	return (FALSE);
 }
 
-int					main(void)
+int						main(void)
 {
 	t_xy			*coord;
 	int				**map;

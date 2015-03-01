@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 15:45:12 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 21:31:22 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 04:08:49 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void				create_case(int **new)
 	x = sq / 4;
 	y = sq % 4;
 	if (new[x][y] == 0)
-		new[x][y] = rand_a_else_b(2, 4);
+	{
+		sq = rand_a_b(1, 10);
+		(sq % 2 == 0) ? (new[x][y] = 2) : (new[x][y] = 4);
+	}
 	else
 		create_case(new);
 }

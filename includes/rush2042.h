@@ -6,11 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2015/03/01 13:40:33 by alegent          ###   ########.fr       */
-=======
-/*   Updated: 2015/03/01 13:35:13 by alegent          ###   ########.fr       */
->>>>>>> alegent
+/*   Updated: 2015/03/01 13:43:26 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +41,6 @@ enum	e_const
 {
 	WIN_VALUE = 2048
 };
-<<<<<<< HEAD
 typedef struct s_env	t_env;
 struct					s_env
 {
@@ -53,11 +48,6 @@ struct					s_env
 };
 t_xy					*create_map(t_env *env);
 t_xy					*new_xy(t_env *env);
-=======
-
-t_xy					*create_map(void);
-t_xy					*new_xy(void);
->>>>>>> alegent
 int						**init_map(void);
 int						rand_a_b(int a, int b);
 int						key_hook(int button);

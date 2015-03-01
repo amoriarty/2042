@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 13:37:09 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:40:33 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "libft.h"
 # include <ncurses.h>
 # include <time.h>
+# include <menu.h>
 # define TRUE 1
 # define FALSE 0
 # define ERROR -1
@@ -45,8 +46,8 @@ struct					s_env
 {
 	int					grid_size;
 };
-t_xy					*create_map(void);
-t_xy					*new_xy(void);
+t_xy					*create_map(t_env *env);
+t_xy					*new_xy(t_env *env);
 int						**init_map(void);
 int						rand_a_b(int a, int b);
 int						key_hook(int button);
@@ -59,5 +60,6 @@ void					down_move(int **map);
 void					up_move(int **map);
 void					left_move(int **map);
 void					right_move(int **map);
+void					create_menu(t_env *env);
 
 #endif

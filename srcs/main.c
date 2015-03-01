@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 01:13:15 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:11:52 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int					main(void)
 	t_xy			*max;
 	int				**map;
 
+	check_win_value(0);
 	initscr();
 	curs_set(FALSE);
 	map = init_map();
-	map = map;
 	while (42)
 	{
 		clear();
@@ -28,13 +28,13 @@ int					main(void)
 		{
 			read_map(map, max);
 			rush2042(map);
+			if (verif_map(map) == FALSE)
+				failure();
 			refresh();
 		}
 		else
 		{
-			clear();
-			endwin();
-			ft_puterror("2042", "Window size too small");
+			error("2042", "Window size too small");
 			break;
 		}
 		max = max;

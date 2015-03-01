@@ -6,13 +6,13 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 16:22:25 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 02:22:32 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:10:51 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
-static int			verif_map(int **map)
+int					verif_map(int **map)
 {
 	int				x;
 	int				y;
@@ -23,6 +23,7 @@ static int			verif_map(int **map)
 		y = -1;
 		while (++y < 4)
 		{
+			check_win_value(map[x][y]);
 			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
 				return (TRUE);
 			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
@@ -39,8 +40,8 @@ int					rush2042(int **map)
 	int				tmp;
 
 	tmp = getch();
-	if (verif_map(map) == FALSE)
-		failure();
+	/*if (verif_map(map) == FALSE)
+		failure();*/
 	if (tmp == DOWN_KEY)
 		down_deplacement(map);
 	else if (tmp == UP_KEY)

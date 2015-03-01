@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:49:07 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 13:56:40 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 17:24:52 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ t_xy				*create_map(t_env *env)
 	coord = new_xy(env);
 	if ((coord->x_max < 20) || (coord->y_max < 10))
 		return (0);
-	x = 0;
-	while (x < coord->x_max)
+	x = -1;
+	while (++x < coord->x_max)
 	{
-		y = 0;
-		while (y < coord->y_max)
+		y = -1;
+		while (++y < coord->y_max)
 		{
 			if ((x == coord->width)
 					|| (x == coord->width * 2)
@@ -35,9 +35,7 @@ t_xy				*create_map(t_env *env)
 					|| (y == coord->height * 2)
 					|| (y == coord->height * 3))
 				mvaddch(x, y, '|');
-			y++;
 		}
-		x++;
 	}
 	return (coord);
 }

@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 16:37:32 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 17:24:14 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 static void				success(void)
 {
 	clear();
-	endwin();
-	ft_putendl("YOU WIN !!!");
+	mvprintw(0, 0, "YOU WIN !!!");
+	mvprintw(1, 0, "Press enter to keep playing");
+	if (getch() == 10)
+		return ;
 	exit(EXIT_SUCCESS);
 }
 

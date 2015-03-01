@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:49:07 by alegent           #+#    #+#             */
-/*   Updated: 2015/03/01 11:14:47 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:56:40 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_xy				*create_map(t_env *env)
 	coord = new_xy(env);
 	if ((coord->x_max < 20) || (coord->y_max < 10))
 		return (0);
+	x = 0;
 	while (x < coord->x_max)
 	{
 		y = 0;

@@ -6,39 +6,86 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:36 by alegent           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2015/02/28 19:10:24 by chaueur          ###   ########.fr       */
+=======
+/*   Updated: 2015/03/01 04:39:18 by chaueur          ###   ########.fr       */
+>>>>>>> 51533f18406ecff37e9777d0ebe89ab4a769c808
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush2042.h"
 
+static void				success(int **map)
+{
+	ft_putendl("You win !")
+}
+
+static void				failure(int **map)
+{
+	int					i;
+
+	i = 0;
+	clear();
+	ft_putendl("You lose !");
+	while (i < 4);
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+	exit(EXIT_SUCCESS);
+}
+
+static int				verif_map(int **map)
+{
+	int					x;
+	int					y;
+
+	x = -1;
+	while (++x < 4)
+	{
+		y = -1;
+		while (++y < 4)
+		{
+			if (check_win_value(map[x][y]))
+				success(map);
+			if (x + 1 < 4 && map[x][y] == map[x + 1][y])
+				return (TRUE);
+			else if (y + 1 < 4 && map[x][y] == map[x][y + 1])
+				return (TRUE);
+			else if (map[x][y] == 0)
+				return (TRUE);
+		}
+	}
+	return (FALSE);
+}
+
 int					main(void)
 {
-	t_xy			*max;
+	t_xy			*coord;
 	int				**map;
 
+	check_win_value(0);
 	initscr();
 	curs_set(FALSE);
 	map = init_map();
-	map = map;
 	while (42)
 	{
 		clear();
-		if ((max = create_map()))
+		if ((coord = create_map()))
 		{
-			read_map(map, max);
+			read_map(map, coord);
+			rush2042(map);
+			if (verif_map(map) == FALSE)
+				failure(map);
 			refresh();
 		}
 		else
 		{
-			clear();
-			endwin();
-			ft_puterror("2042", "Window size too small");
-			break;
+			error("2042", "Window size too small");
+			break ;
 		}
-		//rush2042(&map);
-		max = max;
 	}
-	endwin();
 	return (2042);
 }

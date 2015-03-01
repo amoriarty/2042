@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:16:38 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 17:50:11 by alegent          ###   ########.fr       */
+/*   Updated: 2015/03/01 04:31:58 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,29 @@
 typedef struct s_xy		t_xy;
 struct					s_xy
 {
-	int					x_per_four;
-	int					y_per_four;
+	int					width;
+	int					height;
 	int					x_max;
 	int					y_max;
+};
+enum					e_const
+{
+	WIN_VALUE = 2048
 };
 
 t_xy					*create_map(void);
 t_xy					*new_xy(void);
 int						**init_map(void);
 int						rand_a_b(int a, int b);
-int						rand_a_else_b(int a, int b);
 int						key_hook(int button);
-void					create_case(int ***new);
+void					create_case(int **new);
 void					read_map(int **map, t_xy *max);
-int						rush2042(int ***map);
-void					success(void);
-void					failure(void);
-void					down_deplacement(int ***map);
+int						rush2042(int **map);
+void					error(char *s, char *s2);
+int						check_win_value(int value);
+void					down_move(int **map);
+void					up_move(int **map);
+void					left_move(int **map);
+void					right_move(int **map);
 
 #endif

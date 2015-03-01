@@ -6,7 +6,7 @@
 /*   By: chaueur <chaueur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:49:07 by alegent           #+#    #+#             */
-/*   Updated: 2015/02/28 17:59:19 by chaueur          ###   ########.fr       */
+/*   Updated: 2015/03/01 03:36:33 by chaueur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ t_xy				*create_map(void)
 {
 	int				x;
 	int				y;
-	t_xy			*max;
+	t_xy			*coord;
 
-	max = new_xy();
-	if ((max->x_max < 13) || (max->y_max < 33))
+	coord = new_xy();
+	if ((coord->x_max < 10) || (coord->y_max < 10))
 		return (0);
-	while (x < max->x_max)
+	while (x < coord->x_max)
 	{
 		y = 0;
-		while (y < max->y_max)
+		while (y < coord->y_max)
 		{
-			if ((x == max->x_per_four)
-					|| (x == max->x_per_four * 2)
-					|| (x == max->x_per_four * 3))
+			if ((x == coord->width)
+					|| (x == coord->width * 2)
+					|| (x == coord->width * 3))
 				mvaddch(x, y, '-');
-			if ((y == max->y_per_four)
-					|| (y == max->y_per_four * 2)
-					|| (y == max->y_per_four * 3))
+			if ((y == coord->height)
+					|| (y == coord->height * 2)
+					|| (y == coord->height * 3))
 				mvaddch(x, y, '|');
 			y++;
 		}
 		x++;
 	}
-	return (max);
+	return (coord);
 }
